@@ -10,10 +10,9 @@ PORT = 5060
 
 if __name__ == "__main__":
 
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.connect(("8.8.8.8", 80))
-
     if len(sys.argv) < 2:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
         ip_address = s.getsockname()[0]
     else:
         ip_address = sys.argv[1]
